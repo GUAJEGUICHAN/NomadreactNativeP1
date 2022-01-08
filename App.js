@@ -10,15 +10,28 @@ import AppLoading from 'expo-app-loading';
 
 import { Asset } from 'expo-asset';
 
+const loadFonts = (fonts) => (fonts.map(font => Font.loadAsync(font)))
+
+const loadImages = (images) => {
+  images.map(image => {
+    if (typeof image === "string") {
+      return Image.prefetch(image)
+    } else {
+      return Asset.loadAsync(image)
+    }
+  })
+}
+
 export default function App() {
   const [ready, setReady] = useState(false);
-  const onFinish = () => setReady(true)
-  const startLoading = async () => {
-    await Font.loadAsync(Ionicons.font)
-    await Asset.loadAsync(require('./android.png'));
-    // await Image.prefetch(주소);
 
+  const startLoading = async () => {
+    const fonts = loadFonts([Ionicons.font, Ionicons.font, Ionicons.font]);
+    const images = loadImages(require('./android.png'), "https://reactnative.dev/img/oss_logo.png")
+    await Promise.all([...fonts, ...images])
   }
+
+  const onFinish = () => setReady(true)
 
   if (!ready) {
     return (
