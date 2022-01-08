@@ -1,16 +1,18 @@
-import AppLoading from 'expo-app-loading';
-
 import React, { useState } from 'react'
+
 import { Text } from 'react-native';
 
+import * as Font from 'expo-font'
+
+import { Ionicons } from '@expo/vector-icons'
+
+import AppLoading from 'expo-app-loading';
 
 export default function App() {
   const [ready, setReady] = useState(false);
   const onFinish = () => setReady(true)
   const startLoading = async () => {
-    console.log('startLoading')
-    await new Promise((resolve) => setTimeout(resolve, 5000))
-    console.log('startLoading2')
+    await Font.loadAsync(Ionicons.font)
   }
 
   if (!ready) {
