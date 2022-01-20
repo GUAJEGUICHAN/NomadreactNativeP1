@@ -13,6 +13,7 @@ import {
 import Movie from '../screens/Movie';
 import Search from '../screens/Search';
 import Tv from '../screens/Tv';
+import Stack from './Stack';
 
 const Tab = createBottomTabNavigator();
 
@@ -46,8 +47,9 @@ function Tabs() {
     >
       <Tab.Screen
         name="Movies"
-        component={Movie}
+        component={Stack}
         options={{
+          headerShown: false,
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
               name={focused ? 'film' : 'film-outline'}
@@ -68,7 +70,6 @@ function Tabs() {
               size={size}
             />
           ),
-          // tabBarIcon: <TabBarIcon
         }}
       />
       <Tab.Screen
