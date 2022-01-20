@@ -1,9 +1,13 @@
+import { Ionicons } from '@expo/vector-icons';
+
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import React from 'react';
+
 import { useColorScheme } from 'react-native';
 
 import {
-  BLACK_COLOR, WHITE_COLOR, LIGHT_GRAY_COLOR,
+  BLACK_COLOR, WHITE_COLOR, LIGHT_GRAY_COLOR, ORANGE_COLOR,
 } from '../colors';
 
 import Movie from '../screens/Movie';
@@ -12,7 +16,7 @@ import Tv from '../screens/Tv';
 
 const Tab = createBottomTabNavigator();
 
-export default function Tabs() {
+function Tabs() {
   const isDark = useColorScheme() === 'dark';
 
   return (
@@ -28,16 +32,54 @@ export default function Tabs() {
         tabBarStyle: {
           backgroundColor: isDark ? BLACK_COLOR : WHITE_COLOR,
         },
-        tabBarActiveTintColor: isDark ? WHITE_COLOR : BLACK_COLOR,
+
+        tabBarActiveTintColor: ORANGE_COLOR,
+        // tabBarActiveTintColor: isDark ? WHITE_COLOR : BLACK_COLOR,
         tabBarInactiveTintColor: LIGHT_GRAY_COLOR,
       }}
     >
       <Tab.Screen
         name="Movies"
         component={Movie}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => (
+            <Ionicons
+              name={focused ? 'film' : 'film-outline'}
+              color={color}
+              size={size}
+            />
+          ),
+        }}
       />
-      <Tab.Screen name="Tv" component={Tv} />
-      <Tab.Screen name="Search" component={Search} />
+      <Tab.Screen
+        name="Tv"
+        component={Tv}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => (
+            <Ionicons
+              name={focused ? 'tv' : 'tv-outline'}
+              color={color}
+              size={size}
+            />
+          ),
+          // tabBarIcon: <TabBarIcon
+        }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={Search}
+        options={{
+          tabBarIcon: ({ focused, color, size }) => (
+            <Ionicons
+              name={focused ? 'search' : 'search-outline'}
+              color={color}
+              size={size}
+            />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
+
+export default Tabs;
