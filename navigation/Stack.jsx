@@ -1,6 +1,12 @@
+import React from 'react';
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Text, TouchableOpacity, View } from 'react-native';
+
+import { Text, TouchableOpacity } from 'react-native';
+
 import Tabs from './Tabs';
+
+import { ORANGE_COLOR, BLACK_COLOR } from '../colors';
 
 function ScreenOne({ navigation: { navigate } }) {
   return (
@@ -42,10 +48,33 @@ const NativeStack = createNativeStackNavigator();
 
 function Stack() {
   return (
-    <NativeStack.Navigator>
+    <NativeStack.Navigator
+      screenOptions={{
+        headerTintColor: ORANGE_COLOR,
+        headerTitleStyle: {
+          color: BLACK_COLOR,
+        },
+        headerBackTitleVisible: false,
+        // headerShown: false,
+      }}
+    >
       <NativeStack.Screen name="ScreenOne" component={ScreenOne} />
-      <NativeStack.Screen name="ScreenTwo" component={ScreenTwo} />
-      <NativeStack.Screen name="ScreenThree" component={ScreenThree} />
+      <NativeStack.Screen
+        name="ScreenTwo"
+        component={ScreenTwo}
+        options={{
+          // presentation: 'modal',
+          animation: 'fade',
+        }}
+      />
+      <NativeStack.Screen
+        name="ScreenThree"
+        component={ScreenThree}
+        options={{
+          presentation: 'card',
+          animation: 'flip',
+        }}
+      />
     </NativeStack.Navigator>
   );
 }
