@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    node: true
   },
   extends: [
     'plugin:react/recommended',
@@ -13,10 +14,13 @@ module.exports = {
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
+    requireConfigFile: false,
   },
   plugins: [
     'react',
   ],
+  // parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
   rules: {
     "react/no-unstable-nested-components": [
       "off" | "warn" | "error",
