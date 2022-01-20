@@ -18,6 +18,8 @@ module.exports = {
     'react',
   ],
   rules: {
-    'global-require': 'error',
+    "react/no-unstable-nested-components": [
+      "off" | "warn" | "error",
+      { "allowAsProps": true | false }]
   },
 };

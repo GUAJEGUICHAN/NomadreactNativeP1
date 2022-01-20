@@ -18,7 +18,6 @@ export default function App() {
   // 이미지와 폰트만 프리로드하고싶다면 위 두줄로 충분하다.
   // 하지만 각종 DB나 여러가지 파일도 preload하고 싶다면 이전의 방식을 따르자
 
-
   if (!assets || !loaded) {
     return (
       <AppLoading />
