@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { View, Text } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 
-function Movie() {
+function Movie({ navigation: { navigate } }) {
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => navigate('Stack', { screen: 'ScreenOne' })}
       style={{
         flex: 1,
         justifyContent: 'center',
@@ -12,7 +13,7 @@ function Movie() {
       }}
     >
       <Text>Movie</Text>
-    </View>
+    </TouchableOpacity>
   );
 }
 

@@ -13,7 +13,6 @@ import {
 import Movie from '../screens/Movie';
 import Search from '../screens/Search';
 import Tv from '../screens/Tv';
-import Stack from './Stack';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,7 +21,7 @@ function Tabs() {
 
   return (
     <Tab.Navigator
-      initialRouteName="Search"
+      initialRouteName="Movies"
       screenOptions={{
         headerStyle: {
           backgroundColor: isDark ? BLACK_COLOR : WHITE_COLOR,
@@ -47,9 +46,8 @@ function Tabs() {
     >
       <Tab.Screen
         name="Movies"
-        component={Stack}
+        component={Movie}
         options={{
-          headerShown: false,
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
               name={focused ? 'film' : 'film-outline'}

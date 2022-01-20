@@ -4,14 +4,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { Text, TouchableOpacity } from 'react-native';
 
-import Tabs from './Tabs';
-
 import { ORANGE_COLOR, BLACK_COLOR } from '../colors';
 
 function ScreenOne({ navigation: { navigate } }) {
   return (
     <TouchableOpacity>
-      <Text onPress={() => navigate('ScreenTwo')}>
+      <Text onPress={() => navigate('Tabs', { screen: 'Search' })}>
         One!
       </Text>
     </TouchableOpacity>
@@ -63,7 +61,6 @@ function Stack() {
         name="ScreenTwo"
         component={ScreenTwo}
         options={{
-          // presentation: 'modal',
           animation: 'fade',
         }}
       />
