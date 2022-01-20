@@ -36,6 +36,12 @@ function Tabs() {
         tabBarActiveTintColor: ORANGE_COLOR,
         // tabBarActiveTintColor: isDark ? WHITE_COLOR : BLACK_COLOR,
         tabBarInactiveTintColor: LIGHT_GRAY_COLOR,
+
+        tabBarLabelStyle: {
+          marginTop: -5,
+          fontSize: 12,
+          fontWeight: '600',
+        },
       }}
     >
       <Tab.Screen
