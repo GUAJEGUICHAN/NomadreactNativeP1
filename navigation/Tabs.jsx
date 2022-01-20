@@ -13,26 +13,24 @@ import Tv from '../screens/Tv';
 const Tab = createBottomTabNavigator();
 
 export default function Tabs() {
-  const isDark = useColorScheme() === 'dark';
-  console.log(isDark);
+  // const isDark = useColorScheme() === 'dark';
 
   return (
     <Tab.Navigator
       initialRouteName="Search"
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: isDark ? BLACK_COLOR : WHITE_COLOR,
-        },
-        headerTitleStyle: {
-          color: isDark ? WHITE_COLOR : BLACK_COLOR,
-        },
-        tabBarStyle: {
-          backgroundColor: isDark ? BLACK_COLOR : WHITE_COLOR,
-        },
-        tabBarActiveTintColor: isDark ? WHITE_COLOR : BLACK_COLOR,
-        tabBarInactiveTintColor: LIGHT_GRAY_COLOR,
-
-      }}
+    // screenOptions={{
+    //   headerStyle: {
+    //     backgroundColor: isDark ? BLACK_COLOR : WHITE_COLOR,
+    //   },
+    //   headerTitleStyle: {
+    //     color: isDark ? WHITE_COLOR : BLACK_COLOR,
+    //   },
+    //   tabBarStyle: {
+    //     backgroundColor: isDark ? BLACK_COLOR : WHITE_COLOR,
+    //   },
+    //   tabBarActiveTintColor: isDark ? WHITE_COLOR : BLACK_COLOR,
+    //   tabBarInactiveTintColor: LIGHT_GRAY_COLOR,
+    // }}
     >
       <Tab.Screen
         name="Movies"
