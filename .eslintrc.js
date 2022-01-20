@@ -24,6 +24,18 @@ module.exports = {
   rules: {
     "react/no-unstable-nested-components": [
       "off" | "warn" | "error",
-      { "allowAsProps": true | false }]
+      { "allowAsProps": true | false }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }]
   },
+
 };
