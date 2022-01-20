@@ -15,7 +15,6 @@ import Search from '../screens/Search';
 import Tv from '../screens/Tv';
 
 const Tab = createBottomTabNavigator();
-
 function Tabs() {
   const isDark = useColorScheme() === 'dark';
 
@@ -34,7 +33,6 @@ function Tabs() {
         },
 
         tabBarActiveTintColor: ORANGE_COLOR,
-        // tabBarActiveTintColor: isDark ? WHITE_COLOR : BLACK_COLOR,
         tabBarInactiveTintColor: LIGHT_GRAY_COLOR,
 
         tabBarLabelStyle: {

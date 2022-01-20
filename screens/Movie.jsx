@@ -12,7 +12,13 @@ function Movie({ navigation: { navigate } }) {
         alignItems: 'center',
       }}
     >
-      <Text>Movie</Text>
+      <Text
+        style={{
+          color: ((props) => props.theme.textColor),
+        }}
+      >
+        Movie
+      </Text>
     </TouchableOpacity>
   );
 }

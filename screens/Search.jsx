@@ -1,6 +1,12 @@
 import React from 'react';
 
-import { View, Text } from 'react-native';
+import styled from 'styled-components/native';
+
+import { View } from 'react-native';
+
+const Title = styled.Text`
+  color: ${(props) => props.theme.textColor};
+`;
 
 function Search() {
   return (
@@ -11,7 +17,7 @@ function Search() {
         alignItems: 'center',
       }}
     >
-      <Text>Search</Text>
+      <Title>Search</Title>
     </View>
   );
 }
